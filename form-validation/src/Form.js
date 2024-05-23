@@ -1,5 +1,7 @@
+// src/Form.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Form.css';
 
 const Form = () => {
   const navigate = useNavigate();
@@ -21,7 +23,7 @@ const Form = () => {
   const [errors, setErrors] = useState({});
 
   const countries = ['India', 'USA', 'UK'];
-  const cities = ['Mumbai', 'Delhi', 'Chennai','New York','London'];
+  const cities = ['Mumbai', 'Delhi', 'Chennai', 'New York', 'London'];
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -42,24 +44,24 @@ const Form = () => {
     if (!formData.username) errors.username = 'Username is required';
     if (!formData.email) errors.email = 'Email is required';
     if (!formData.password) errors.password = 'Password is required';
-    if (!formData.phoneNo){
-        errors.phoneNo = 'Phone Number is required';
+    if (!formData.phoneNo) {
+      errors.phoneNo = 'Phone Number is required';
     } else if (!phoneNoRegex.test(formData.phoneNo)) {
-        errors.phoneNo = 'Phone Number must be 10 digits';
+      errors.phoneNo = 'Phone Number must be 10 digits';
     }
     if (!formData.country) errors.country = 'Country is required';
     if (!formData.city) errors.city = 'City is required';
-    if (!formData.panNo){
-        errors.panNo = 'Pan Number is required';
+    if (!formData.panNo) {
+      errors.panNo = 'Pan Number is required';
     } else if (!panNoRegex.test(formData.panNo)) {
-        errors.panNo = 'Pan Number must be alphanumeric';
+      errors.panNo = 'Pan Number must be alphanumeric';
     }
-    if (!formData.aadharNo){
-        errors.aadharNo = 'Aadhar Number is required';
+    if (!formData.aadharNo) {
+      errors.aadharNo = 'Aadhar Number is required';
     } else if (!aadharNoRegex.test(formData.aadharNo)) {
-        errors.aadharNo = 'Phone Number must be 12 digits';
+      errors.aadharNo = 'Aadhar Number must be 12 digits';
     }
-        return errors;
+    return errors;
   };
 
   const handleSubmit = (e) => {
@@ -139,7 +141,7 @@ const Form = () => {
         <input type="text" name="aadharNo" value={formData.aadharNo} onChange={handleChange} />
         {errors.aadharNo && <span>{errors.aadharNo}</span>}
       </div>
-      <button type="submit" disabled={Object.keys(validate()).length > 0}>Submit</button>
+      <button type="submit">Submit</button>
     </form>
   );
 };
