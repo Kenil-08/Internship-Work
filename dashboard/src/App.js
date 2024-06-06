@@ -1,12 +1,24 @@
 import './App.css';
+import React, {useEffect} from 'react';
+import {BrowerRouter, Route, Routes} from 'react-router-dom';
+import {FiSettings} from 'react-icons/fi';
+import {TooltipComponent} from '@syncfusion/ej2-react-popups';
 
 function App() {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-    </>
+    <div>
+      <BrowerRouter>
+        <div className='flex relative dark:bg-main-dark-bg'> 
+          <div className='fixed right-4 bottom-4' style={{ zIndex: '1000' }}>
+            <TooltipComponent content="Settings" position="Top">
+              <button>
+                <FiSettings />
+              </button>
+            </TooltipComponent>
+          </div>
+        </div>
+      </BrowerRouter>
+    </div>
   );
 }
 export default App;
