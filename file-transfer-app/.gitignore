@@ -43,6 +43,7 @@ yarn-error.log*
 *.njsproj
 *.sln
 
+
 # Optional npm cache directory
 .npm
 
@@ -61,3 +62,6 @@ yarn-error.log*
 
 # Ignore any local server configuration files
 /local-config.json
+
+#Misc
+note.txt
