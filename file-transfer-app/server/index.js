@@ -4,7 +4,7 @@ const cookieParser = require("cookie-parser");
 const { connectMongoDb } = require("./connection");
 const userRoute = require("./routes/user");
 const staticRoute = require("./routes/staticRouter");
-// const User = require('./models/user');
+const {restrictToLoggedInUserOnly} = require('./middlewares/auth');
 const dotenv = require("dotenv");
 
 dotenv.config();
@@ -19,14 +19,8 @@ app.set("views", path.resolve("./views"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.get('/test', async(req,res)=>{
-//     const allUsers = await User.find({});
-//     console.log(allUsers);
-//     return res.render('home',{
-//         users: allUsers,
-//     });
-// });
-
+// Below line make sure that you are logged in and then after only you can access file upload page.
+// app.use("/file", restrictToLoggedInUserOnly, fileRoute); 
 app.use("/user", userRoute);
 app.use("/", staticRoute);
 
