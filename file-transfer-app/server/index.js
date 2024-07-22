@@ -1,6 +1,11 @@
 const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
+const http = require('http');
+const app = express();
+const server = http.createServer(app);
+const {Server} = require('socket.io');
+const io = new Server(server);
 const { connectMongoDb } = require("./connection");
 const userRoute = require("./routes/user");
 const staticRoute = require("./routes/staticRouter");
@@ -8,7 +13,6 @@ const {restrictToLoggedInUserOnly} = require('./middlewares/auth');
 const dotenv = require("dotenv");
 
 dotenv.config();
-const app = express();
 
 // NOTE : Provide a Database URL.
 connectMongoDb(process.env.MONGODB_URI);

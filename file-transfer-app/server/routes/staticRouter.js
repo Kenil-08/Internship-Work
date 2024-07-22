@@ -14,4 +14,8 @@ router.get('/signup',(req,res)=>{
     return res.render('signup');
 });
 
+router.get('/chat',(req,res)=>{
+    return res.render('chat');
+});
+
 module.exports = router;
