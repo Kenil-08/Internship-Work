@@ -1,22 +1,23 @@
 {
-  "name": "server",
+  "name": "file-transfer-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "React File Transfer application",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js"
   },
-  "author": "",
+  "author": "Kenil Kanani",
   "license": "ISC",
   "dependencies": {
-    "cookie-parser": "^1.4.6",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "ejs": "^3.1.10",
     "express": "^4.19.2",
+    "http": "^0.0.1-security",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.5.1",
     "nodemon": "^3.1.4",
-    "socket.io": "^4.7.5",
-    "uuid": "^10.0.0"
+    "path": "^0.12.7",
+    "socket.io": "^4.7.5"
   }
 }
