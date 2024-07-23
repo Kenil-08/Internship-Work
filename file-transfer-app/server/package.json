@@ -1,12 +1,12 @@
 {
-  "name": "file-transfer-app",
+  "name": "server",
   "version": "1.0.0",
-  "description": "React File Transfer application",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js"
   },
-  "author": "Kenil Kanani",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",

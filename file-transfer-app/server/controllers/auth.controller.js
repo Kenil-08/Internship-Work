@@ -1,7 +1,7 @@
-const User = ("../models/user.model.js");
-const bcryptjs = ("bcryptjs");
-const { errorHandler } = ("../utils/error.js");
-const jwt = ("jsonwebtoken");
+const User = require("../models/user.model.js");
+const bcryptjs = require("bcryptjs");
+const { errorHandler } = require("../utils/error.js");
+const jwt = require("jsonwebtoken");
 
 export const signup = async (req, res, next) => {
   const { username, email, password } = req.body;
